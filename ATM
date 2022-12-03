@@ -1,0 +1,52 @@
+import java.util.Scanner;
+public class mohan_question {
+    public static void main(String[] args) {
+        int Balance = 1000;
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Welcome to ATM");
+        System.out.println("Press 1 for Withdraw Money");
+        System.out.println("Press 2 for Deposit Money");
+        System.out.println("Press 3 for Check Balance");
+        System.out.println("Press 4 for Exit");
+        //For Withdraw Money
+        int Button = sc.nextInt();
+        if (Button == 1) {
+            System.out.println("You Are Selecting For Withdraw Money");
+            System.out.print("Enter Amount = ");
+            int Amount = sc.nextInt();
+            System.out.print("Enter Your Four Digit ATM Pin = ");
+            int Pin = sc.nextInt();
+            if (Pin == 1234) {
+                if (Amount < Balance) {
+                    int Left = Balance - Amount;
+                    System.out.println("Withdraw Successful your Account Balance = " + Left);
+                } else {
+                    System.out.println("Not Enough Money in your Account");
+                }
+            } else {
+                System.out.println("Wrong Pin");
+            }
+        }
+        //Fpr Deposit Money
+        int Button2 = sc.nextInt();
+        if (Button2 == 2) {
+            System.out.println("you Are Selecting for Deposit");
+            System.out.print("Enter Your Deposit Amount = ");
+            int addMoney = sc.nextInt();
+            int AccountBalance = addMoney + Balance;
+            System.out.print("Your Total Balance = " + AccountBalance);
+        }
+        //For Checking Balance
+        int Button3 = sc.nextInt();
+        if (Button3 == 3) {
+            System.out.println("you Are Selecting for Check Balance");
+            System.out.println(Balance);
+        }
+        //For Exit
+        int Button4 = sc.nextInt();
+        if (Button4 == 4) {
+            System.out.println("you Are Selecting for Exit");
+            System.out.println("Please Remove Your Card");
+        }
+    }
+}
